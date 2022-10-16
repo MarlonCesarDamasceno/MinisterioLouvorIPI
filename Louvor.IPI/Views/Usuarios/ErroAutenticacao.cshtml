@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Acesso ao sistema erro de autenticação";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Erro de autenticação</h2>
+        <p class="text-info">Erro ao realizar sua autenticação. Usuário ou senha inválido.<br />Caso tenha inserido dados incorretos, retorne e informe as informações novamente. Ou poderá recuperar seus dados de acesso. <br />Se ainda não tem um cadastro no sistema, poderá solicitar a criação de uma nova conta de usuário.</p>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-4"><a asp-action="FazerLogin" role="button" class="btn btn-default">Voltar</a></div>
+    <div class="col-md-4"><a asp-action="RecuperarSenha" role="button" class="btn btn-secondary">Recuperar dados de Acesso</a></div>
+    <div class="col-md-4"><a asp-action="NovoUsuario" role="button" class="btn btn-primary">Criar conta</a></div>
+</div>

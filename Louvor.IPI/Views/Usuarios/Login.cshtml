@@ -1,0 +1,49 @@
+﻿@model Louvor.IPI.Domain.Request.UsuarioRequest
+
+@{
+    ViewData["Title"] = "Acesso ao sistema";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="display-2">Acesso ao sistema</h2>
+        <p class="text-justify">Caso ainda não tenha uma conta registrada ou não se lembre dos seus dados de acesso, expanda o menu do lado esquerdo e escolha a opção correspondente para provisionar seu acesso.</p>
+        
+    </div>
+    </div>
+<form asp-action="FazerLogin" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="display-3">Login</h2>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <label for="email" class="custom-control-label">E-mail</label>
+            <input type="email" id="email" class="form-control" size="100" maxlength="100" placeholder="Informe seu e-mail de cadastro" asp-for="@Model.Email" />
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="Senha" class="control-label">Senha</label>
+            <input type="password" id="Senha" size="11" maxlength="11" asp-for="@Model.Senha" />
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Entrar</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</form>
+    
+
+

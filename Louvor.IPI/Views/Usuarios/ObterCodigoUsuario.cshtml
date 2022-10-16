@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model Louvor.IPI.Domain.Request.UsuarioRequestConfirmacaoCodigo
+@{
+    ViewData["Title"] = "Codigo de confirmação";
+}
+
+
+    <div class="row">
+        <div class="col-md12">
+            <h2>Codigo de confirmação</h2>
+
+            <p class="text-justify">
+                Precisamos confirmar que é realmente você que está realizando a criação de uma conta no sistema do Ministério de Louvor do IPI.<br />
+                Você recebeu no seu e-mail (@HttpContextAccessor.HttpContext.Session.GetString("EmailUsuario")) um código de 4 dígitos.
+                <br />Caso não tenha recebido, você poderá obter o código novamente.
+            </p>
+        </div>
+    </div>
+    <form asp-action="EfetivarCadastro" method="post">
+        <div class="row">
+            <div class="col-md4"></div>
+
+            <div class="col-md4">
+
+
+                <label for="codigoConfirmacao" class="control-label">Código de confirmação de 4 dígitos</label>
+                <input type="tel" id="codigoConfirmacao" class="form-control" size="4" maxlength="4" asp-for="@Model.codigo" />
+            </div>
+            <div class="col-md4">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md4">
+            </div>
+            <div class="col-md2">
+                <button type="submit" class="btn btn-success">Validar código</button>
+
+            </div>
+            <div class="col-md2">
+                <a asp-action="GerarCodigo" class="btn btn-secondary">Obter novo código</a>
+            </div>
+            <div class="col-md4">
+            </div>
+
+
+
+        </div>
+        </form>
+        
+
+
+
+
+
+
+

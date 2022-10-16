@@ -1,0 +1,49 @@
+﻿@model Louvor.IPI.Domain.Request.UsuarioRequest;
+@{
+    ViewData["Title"] = "RecuperarSenha";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Recuperar dados de acesso</h2>
+        @if (ViewBag.StatusCodigoConfirmacao)
+        {
+            <p class="text-justify">O código informado está inválido. Para solicitar um novo codigo, informe novamente seu e-mail.</p>
+        }
+        else
+        {
+            <p class="text-justify">Vamos recuperar seus dados de acesso ao sistema.<br />Informe o e-mail que utilizou para criar seu usário, que iremos enviar um código de confirmação para alteração da sua senha.</p>
+        }
+
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <form asp-action="VerificarUsuario" method="post">
+        <div class="col-md-6">
+            <label for="email" id="LblEmail"
+ class="custom-control-label">E-mail</label>
+            <input type="temail" class="form-control" id="email" placeholder="informe seu e-mail de cadastro" asp-for="@Model.Email" />
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="btn btn-success" value="Recuperar senha" />
+
+        </div>
+
+
+    </form> 
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

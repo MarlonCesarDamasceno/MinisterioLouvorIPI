@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ministério de Louvor IPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="/js/ControlesExibicao/HabilitaTelas.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md4">
+                    <a href="#MarcoMenu" class="btn btn-secondary" role="button">Ir para o Menu</a>
+                </div>
+                <div class="col-md4">
+                    <a href="#MarcoMain" class="btn btn-secondary" role=    "button">Ir para o conteúdo</a>
+                </div>
+                <div class="col-md4">
+                    <button  onclick="FecharSistema();" class="btn btn-default">Fechar</button>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="text-align:center">Ministério de Louvor IPI</h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md4">
+                    <span id="MarcoMenu"></span>
+                    <h2>Menu pricipal</h2>
+                    <span id="MenuPrincipal" style="display:none">
+                        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+                            </li>
+                            <link class="nav-item" />
+                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="NovoUsuario">Criar conta no sistema</a>
+                            </li>
+                            <li class="nav-item" />
+                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Login">Login</a>
+
+                            </li>
+                            <link class="nav-item" />
+                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="RecuperarSenha">Recuperar senha</a>
+                            </li>
+                        </nav>
+
+                    </span>
+                    <button type="button" class="btn btn-default" id="btnMenu" aria-expanded="false" onclick="HabilitarMenu();">Menu<span class="glyphicon-plus" id="icosExpand" aria-hidden="true"></span></button>
+                </div>
+
+
+
+                <div class="col-md4">
+                    <p class="text-justify">
+                        Amar a Deus sobre todas as coisas.<br />
+                        Engrandecer seu nome com total adoração e sempre afirmarmos que ele é o autor das nossas vidas.<br />
+                        Jesus é o centro da nossa adoração.
+                    </p>
+
+                </div>
+                <div class="col-md4">
+                    <img class="img-fluid" alt="Logo do ministério de louvor" src="~/Imagens/Logo.jpg" />
+
+                </div>
+            </div>
+
+        </div>
+        </ader>
+        <span id="MarcoMenu"></span>
+        <div class="container">
+            <span id="MarcoMain"></span>
+            <main role="main" class="pb-3">
+                @RenderBody()
+
+        </div>
+        </main>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2022 - Ministério de Louvor IPI
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

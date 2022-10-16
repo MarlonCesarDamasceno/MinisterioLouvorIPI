@@ -1,0 +1,20 @@
+﻿@model Louvor.IPI.Domain.Request.UsuarioRequest
+@{
+    ViewData["Title"] = "NovoUsuario";
+}
+
+<h1>NovoUsuario</h1>
+
+<form asp-action="CadastrarNovoUsuario" method="post">
+
+    <label for="nome" class="control-label">Nome completo</label>
+    <input type="text" id="nome" class="form-control" asp-for="@Model.Nome" />
+
+    <label for="email" class="control-label">Email</label>
+    <input type="text" id="email" class="form-control" asp-for="@Model.Email" />
+
+    <label for="pass" class="control-label">Senha</label>
+    <input type="password" id="pass" class="form-control" asp-for="@Model.Senha" />
+    <input type="submit"
+           class="btn btn-success" value="Cadastrar" />
+</form>

@@ -1,0 +1,55 @@
+﻿@model Louvor.IPI.Domain.Request.UsuarioRequestConfirmacaoCodigo;
+
+@{
+    ViewData["Title"] = "Recuperar senha";
+}
+
+@if (ViewBag.StatusCadastroAtivo)
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Codigo de confirmação</h2>
+
+            <p class="text-justify">@ViewBag.NomeUsuario, Enviamos um código para seu e-mail. Por gentileza informe o código de validação para alterar sua senha.</p>
+        </div>
+    </div>
+    <form asp-action="ValidacaoCodigoAlteracaoSenha" method="post">
+        <input type="hidden" value="@ViewBag.UsuarioId" asp-for="@Model.UsuarioId" />
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="NumeroConfirmacaoAlteracaroSenha" class="control-label" id="LblCodigoAlteracaoSenha">Insira o código de confirmação</label>
+                <input type="tel" id="NumeroConfirmgacaoAlteracaroSenha" asp-for="@Model.codigo" />
+            </div>
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-success" value="Confirmar" />
+
+            </div>
+        </div>
+    </form>
+
+}
+else
+{
+<div class="row">
+    <div class="col-md-12">
+        <h2>Cadastro não verificado</h2>
+        <p class="text-justify">Infelizmente não foi possível localizar uma conta ativa para o e-mail informado. Por gentileza, verifique se informou o e-mail de cadastro corretamente.<br />
+        Ou você poderá criar uma conta para acesso ao sistema.</p>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-6">
+<a asp-action="NovoUsuario" class="btn btn-primary" role="button">Criar uma conta de acesso ao sistema</a>
+    </div>
+    <div class="col-md-6">
+        <a asp-action="RecuperarSenha" class="btn btn-secondary" role="button">Recuperar dados de acesso</a>
+
+    </div>
+
+</div>
+
+}
+

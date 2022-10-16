@@ -1,0 +1,30 @@
+﻿
+ 
+@{
+    ViewData["Title"] = "SenhaAlterada";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        if(@ViewBag.StatusAlteracao)  
+        {
+        <h2>efetivação de alteração de senha</h2>
+        <p class="text-justify">Sua senha foi alterada com sucesso!</p>
+        <a asp-action="Login" class="btn btn-success" role="button">Entrar no sistema</a>
+        </div>
+    </div>
+        }
+else
+{
+<div class="ROW">
+    <div class="col-md-12">
+        <h2 style="color:red">Ops, ação não permitida. Erro 001</h2>
+        <p class="text-justify" style="color:red">Ops, houve um erro ao atualizar sua senha! Ação não permitida!</p>
+        <a asp-action="AlterarSenha" class="btn btn-primary" role="button">Alterar senha de acesso</a>
+        </div>
+    </div>
+}
+    
+
+
+

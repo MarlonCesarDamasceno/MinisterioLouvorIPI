@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model Louvor.IPI.Domain.Response.UsuariosResponse
+
+@{
+    ViewData["Title"] = "EfetivarCadastro";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @if (!Model.StatusConfirmacao)
+        {
+            <h2>Erro ao validar o código</h2>
+            <p class="text-justify" style="color:red">O código de confirmação inserido está inválido. Para seguirmos com a efetivação do seu cadastro, solicite um novo código.</p>
+            <a asp-action="GerarCodigo" class="btn btn-success" role="button">Solicitar novo código</a>
+        }
+
+        @if (Model.StatusCadastro)
+        {
+            <h2 class="display-4">Conta criada com sucesso</h2>
+            <p class="text-justify">
+                Obrigado @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuario"), sua conta de acesso ao sistema no Ministério de Louvor do IPI foi criada com sucesso.</p>
+                <a asp-action="Login" class="btn btn-success" role="button"></a>
+                }
+</div>
+    </div>
+

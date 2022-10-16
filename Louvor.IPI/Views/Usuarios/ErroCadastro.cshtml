@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "ErroCadastro";
+}
+
+<div class="row">
+    <div class="col-md12">
+        <h2>Erro ao realizar cadastro. Conta existente</h2>
+        <p class="text-justify">A conta de e-mail utilizada para criar o cadastro no sistema, já há uma conta atrelada. <br />Você poderá recuperar sua senha de acesso.</p>
+
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md4">
+        <a asp-action="RecuperarSenha" class="btn btn-primary" role="button">Recuperar senha</a>
+    </div>
+    <div class="col-md4">
+        <a asp-action="Login" class="btn btn-secondary" role="button">Acessar o sistema</a>
+    </div>
+</div>

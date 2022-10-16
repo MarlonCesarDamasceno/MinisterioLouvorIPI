@@ -1,0 +1,17 @@
+﻿@model  List<Louvor.IPI.Domain.Response.MusicasResponse>;
+@{
+    ViewData["Title"] = "Musicas cadastradas";
+}
+
+<h1>Musicas cadastradas no sistema</h1>
+<p>Confira abaixo as músicas que foram cadastradas no sistema.</p>
+@foreach (var musicas in Model)
+            {
+<h2>@musicas.NomeMusica</h2>
+<p>Banda / Artista: @musicas.BandaArtista.<br />
+    Data de inserção no sistema: @musicas.DataInclusao.<br />
+    Link de reprodução no Youtube: @musicas.LinkYoutube.<br />
+    Enviado por: @musicas.NomeUsuarioCriador.
+    </p>
+            }
+
